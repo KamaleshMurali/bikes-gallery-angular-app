@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    GalleryComponent
+    GalleryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

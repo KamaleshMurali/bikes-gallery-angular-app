@@ -1,9 +1,7 @@
 <mat-toolbar class="toolbar" fxLayoutAlign="space-between">
-  <section fxLayout="row" fxLayoutGap="10px" class="logo-section">
+  <section fxLayout="row" fxFlex="300px" fxLayoutGap="10px" class="logo-section">
     <!--LOGO -->
-    <button mat-icon-button class="logo" aria-label="App Logo">
-      <mat-icon>home</mat-icon>
-    </button>
+    <img class="logo" src="../../assets/logos/app-logo.jpg" alt="thumbnail" />
     <!-- APP NAME -->
     <div class="app-name">Gallery</div>
   </section>
@@ -20,11 +18,13 @@
     <button mat-flat-button class="about-btn" aria-label="Navigates to About" (click)="navigate('/about')">
       <label>About</label>
     </button>
-    <!-- Login -->
-    <button mat-button [matMenuTriggerFor]="userInfo">Kamalesh</button>
+    <!-- Display for Login User -->
+    <!-- <button mat-button [matMenuTriggerFor]="userInfo">Kamalesh</button>
     <mat-menu #userInfo="matMenu">
       <button mat-menu-item>Logout</button>
-    </mat-menu>
+    </mat-menu> -->
+    <!-- Login -->
+    <button mat-flat-button class="login-btn" aria-label="Navigates to Login" (click)="navigate('/login')"><label>Login</label></button>
   </section>
 </mat-toolbar>
 
