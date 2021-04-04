@@ -1,0 +1,24 @@
+.card {
+    min-width: 300px;
+    max-width: 300px;
+    margin: 20px 0px;
+  }
+
+.header-image {
+    background-size: cover;
+}
+
+::ng-deep .mat-card-image {
+  width: 300px !important;
+  height: 200px !important;
+}
+
+::ng-deep .action {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.card-actions {
+  bottom: 0;
+}
