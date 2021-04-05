@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Image {
-  title: string,
-  subTitle: string,
-  url: string,
-  logoUrl: string,
-  description: string
-}
+import  { Image } from '../shared/model/image.model';
 
 @Component({
   selector: 'app-home',

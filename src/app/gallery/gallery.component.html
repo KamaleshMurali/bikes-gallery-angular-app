@@ -1,1 +1,13 @@
-<p>gallery works!</p>
+<section>
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <ng-container *ngFor="let image of images">
+      <mat-grid-tile class="container">
+        <img class="image" width="300px" height="200px" src={{image.url}} />
+        <div class="middle">
+          <div class="text">{{image?.title}}</div>
+        </div>
+      </mat-grid-tile>
+    </ng-container>
+
+  </mat-grid-list>
+</section>
