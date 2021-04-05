@@ -3,7 +3,8 @@
 }
 
 .toolbar {
-  position: absolute;
+  position: sticky;
+  z-index: 1000;
   top: 0;
   left: 0;
   right: 0;
@@ -19,4 +20,22 @@
 .logo {
   background-color: #fff;
   border-radius: 25px;
+}
+
+.user-name {
+  min-width: 100px;
+  max-width: 200px;
+  background-color: #efefef;
+  color: black;
+}
+
+.nav-btn {
+  background-color: #1976d2;
+  color: white;
+  font-size: 16px;
+}
+
+.active-route {
+  background-color: black;
+  color: white;
 }

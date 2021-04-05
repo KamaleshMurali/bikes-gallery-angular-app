@@ -3,28 +3,59 @@
     <!--LOGO -->
     <img class="logo" src="../../assets/logos/app-logo.jpg" alt="thumbnail" />
     <!-- APP NAME -->
-    <div class="app-name">Gallery</div>
+    <div class="app-name"><em>Bikes Gallery</em></div>
   </section>
   <section fxLayout="row" fxLayoutAlign="flex-end" fxLayoutGap="10px" class="nav-section">
     <!-- Home -->
-    <button mat-icon-button class="home-btn-icon" aria-label="Home icon-button" (click)="navigate('/home')">
+    <button
+      mat-icon-button
+      class="home-btn-icon nav-btn"
+      aria-label="Home icon-button"
+      [routerLink]="['/home']"
+      [routerLinkActive]="['active-route']"
+      >
       <mat-icon>home</mat-icon>
     </button>
     <!-- Gallery -->
-    <button mat-flat-button class="gallery-btn" aria-label="Navigates to Gallery" (click)="navigate('/gallery')">
-      <label>Gallery</label>
-    </button>
+    <ng-container *ngIf="user">
+      <button
+        mat-flat-button
+        class="gallery-btn nav-btn"
+        aria-label="Navigates to Gallery"
+        [routerLink]="['/gallery']"
+        [routerLinkActive]="['active-route']">
+        <label>Gallery</label>
+      </button>
+    </ng-container>
     <!-- About -->
-    <button mat-flat-button class="about-btn" aria-label="Navigates to About" (click)="navigate('/about')">
+    <button
+      mat-flat-button
+      class="about-btn nav-btn"
+      aria-label="Navigates to About"
+      [routerLink]="['/about']"
+      [routerLinkActive]="['active-route']">
       <label>About</label>
     </button>
-    <!-- Display for Login User -->
-    <!-- <button mat-button [matMenuTriggerFor]="userInfo">Kamalesh</button>
-    <mat-menu #userInfo="matMenu">
-      <button mat-menu-item>Logout</button>
-    </mat-menu> -->
+
     <!-- Login -->
-    <button mat-flat-button class="login-btn" aria-label="Navigates to Login" (click)="navigate('/login')"><label>Login</label></button>
+    <ng-container *ngIf="!user else displayUser">
+      <button
+        mat-flat-button
+        class="login-btn nav-btn"
+        aria-label="Navigates to Login"
+        (click)="login()">
+        <label>Login</label>
+      </button>
+    </ng-container>
+
+    <!-- Display for Login User -->
+    <ng-template #displayUser>
+      <button class="user-name" mat-button [matMenuTriggerFor]="userInfo">{{user?.name | titlecase}}</button>
+      <mat-menu #userInfo="matMenu">
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </ng-template>
+
   </section>
 </mat-toolbar>
 
