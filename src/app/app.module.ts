@@ -31,6 +31,7 @@ import { LoginComponent } from './login/login.component';
     SharedModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoginComponent]
 })
 export class AppModule { }

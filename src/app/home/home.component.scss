@@ -22,3 +22,21 @@
 .card-actions {
   bottom: 0;
 }
+
+.login-section {
+  background-color: #efefef;
+  margin: 0px auto;
+  .login-warning {
+    border: 1px solid #efefef;
+    text-align: center;
+    padding: 15px;
+    width: 600px;
+    .info-text {
+      padding-top: 5px;
+    }
+  }
+}
+
+.info-icon {
+  color: blue;
+}

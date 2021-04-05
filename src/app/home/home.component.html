@@ -1,19 +1,28 @@
-<section fxLayout="row wrap" fxLayoutGap="50px">
-  <ng-container *ngFor="let image of images">
-    <mat-card fxLayout="column" fxLayoutAlign="space-between" class="card">
-        <mat-card-header>
-          <img class="header-image" mat-card-avatar src={{image?.logoUrl}} alt="thumbnail" />
-          <mat-card-title>{{image?.title}}</mat-card-title>
-          <mat-card-subtitle>{{image?.subTitle}}</mat-card-subtitle>
-        </mat-card-header>
-        <img height="200px" width="400px" mat-card-image src={{image?.url}} alt="Photo of a bike">
-        <mat-card-content>
-          <p>{{image?.description}}</p>
-        </mat-card-content>
-        <mat-card-actions fxLayoutAlign="flex-end" fxLayoutGap="10px" class="card-actions">
-          <button mat-icon-button class="action favourite-btn"><mat-icon>favorite_border</mat-icon></button>
-          <button mat-icon-button class="action save-btn"><mat-icon>save_alt</mat-icon></button>
-        </mat-card-actions>
-      </mat-card>
-  </ng-container>
+<section class="home" fxLayout="column" fxLayoutGap="20px">
+  <section class="login-section">
+    <div class="login-warning" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center">
+      <div class="login-info"><mat-icon class="info-icon">info</mat-icon></div>
+      <span class="info-text">Please Login to view the newly arrived Bikes in Gallery Section</span>
+    </div>
+  </section>
+
+  <section fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="50px">
+    <ng-container *ngFor="let image of images">
+      <mat-card fxLayout="column" fxLayoutAlign="space-between" class="card">
+          <mat-card-header>
+            <img class="header-image" mat-card-avatar src={{image?.logoUrl}} alt="thumbnail" />
+            <mat-card-title>{{image?.title}}</mat-card-title>
+            <mat-card-subtitle>{{image?.subTitle}}</mat-card-subtitle>
+          </mat-card-header>
+          <img height="200px" width="400px" mat-card-image src={{image?.url}} alt="Photo of a bike">
+          <mat-card-content>
+            <p>{{image?.description}}</p>
+          </mat-card-content>
+          <mat-card-actions fxLayoutAlign="flex-end" fxLayoutGap="10px" class="card-actions">
+            <button mat-icon-button class="action favourite-btn"><mat-icon>favorite_border</mat-icon></button>
+            <button mat-icon-button class="action save-btn"><mat-icon>save_alt</mat-icon></button>
+          </mat-card-actions>
+        </mat-card>
+    </ng-container>
+  </section>
 </section>

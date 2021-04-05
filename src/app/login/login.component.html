@@ -1,24 +1,36 @@
-<section fxLayout="row" fxLayoutAlign="center" class="login">
-  <div fxLayout="column" fxLayoutGap="10px" class="login-container">
+<section fxLayout="row" fxLayoutAlign="flex-start" class="login">
+  <div class="image" fxFlex="60%">
+    <img width="460px" height="380px" src="../../assets/images/yamaha.jpg" />
+  </div>
+
+  <div fxFlex="40%" fxLayout="column" fxLayoutGap="10px" class="login-container">
 
     <mat-label class="login-label">Login</mat-label>
+
+    <mat-form-field class="email" appearance="outline">
+      <mat-label>Enter your username</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="username" required>
+      <mat-error *ngIf="username.invalid">{{getUsernameErrorMessage()}}</mat-error>
+    </mat-form-field>
+
     <mat-form-field class="email" appearance="outline">
       <mat-label>Enter your email</mat-label>
-      <input matInput placeholder="pat@example.com" required>
-      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field class="pswd" appearance="outline">
       <mat-label>Enter your password</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
+      <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <!-- <mat-error *ngIf="password.invalid">{{getPswdErrorMessage()}}</mat-error> -->
       </button>
     </mat-form-field>
 
     <div class="actions" fxLayout="row" fxLayoutAlign="space-around">
-      <button mat-flat-button>Cancel</button>
-      <button mat-flat-button color="primary">Login</button>
+      <button mat-flat-button class="cancel" (click)="cancel()">Cancel</button>
+      <button mat-flat-button color="primary" (click)="login()" [disabled]="!this.email.valid || !this.password.valid">Login</button>
     </div>
   </div>
 </section>
